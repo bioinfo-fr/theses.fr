@@ -4,3 +4,10 @@ resources
 tmp/*
 !tmp/.gitkeep
 .junk
+
+*.tex
+*.html
+*_files/
+*.pdf
+
+.vscode/

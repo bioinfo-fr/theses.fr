@@ -1,0 +1,73 @@
+---
+title: Analysis of French PhD theses
+author: Samuel Ortion
+date: 2023-07-06
+freeze: auto
+---
+
+## Load data and libraries
+
+```{python}
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+import datetime
+
+```
+
+```{python}
+# Set the plotting style
+plt.style.use("../bioinfo-fr.mplstyle")
+```
+
+
+```{python}
+# Load the dataframe
+df = pd.read_csv(
+    "../tmp/theses-soutenues-filtered.csv", quotechar='"', sep=",", header=0
+)
+df["date_soutenance"] = pd.to_datetime(df["date_soutenance"])
+df.head()
+```
+
+
+## Distribution of Theses Soutenance Dates
+
+```{python}
+# Select only theses soutenues after 1985
+start_year = 2000
+current_year = 2023  # For the dataset we have.
+df_after = df[df["date_soutenance"].dt.year >= start_year]
+# Add a column with the year of defense
+df_after = df_after.assign(
+    year_soutenance=df_after.apply(lambda x: x["date_soutenance"].year, axis=1)
+)
+```
+
+```{python}
+plt.figure()
+sns.countplot(df_after, x="year_soutenance", color="C0")
+# Don't plot all the years
+plt.xticks(np.arange(0, current_year - start_year, 5), rotation=45)
+plt.xlabel("Année")
+plt.ylabel("Nombre de thèses soutenues")
+plt.title("Thèses soutenues depuis 200 par année")
+plt.show()
+```
+
+## Distribution of Theses by Discipline
+
+Code inspiré de <https://github.com/richarddelome/theses_fr/>
+```{python}
+df_discipline = (
+    df_after["discipline.fr"].explode().value_counts()[:20].sort_values(ascending=True)
+)
+df_discipline.head()
+```
+
+```{python}
+plt.figure()
+plt.barh(df_discipline.index, df_discipline.values, color="C0", zorder=3)
+
+```

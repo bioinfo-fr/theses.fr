@@ -9,3 +9,6 @@ dependencies:
   - matplotlib
   - seaborn
   - tqdm
+  - ipykernel
+  - nbformat
+  - nbclient
