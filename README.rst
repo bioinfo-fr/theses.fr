@@ -8,8 +8,8 @@ All contributions are welcome!
 Data source
 ***********
 
-* `theses.fr <https://www.theses.fr/>`
-* `theses.fr data dump on data.gouv.fr <https://www.data.gouv.fr/fr/datasets/theses-soutenues-en-france-depuis-1985/>` (dump of 2023-01-20 used here)
+* `theses.fr <https://www.theses.fr/>`_
+* `theses.fr data dump on data.gouv.fr <https://www.data.gouv.fr/fr/datasets/theses-soutenues-en-france-depuis-1985/>`_ (dump of 2023-01-20 used here)
 
 Setup 
 *****
@@ -29,7 +29,7 @@ Setup
 References
 **********
 
-* `theses.fr <https://www.theses.fr/>`
-* `richarddelome/theses_fr *Some stats about all French PhD dissertations since 1985* <https://github.com/richarddelome/theses_fr>`
+* `theses.fr <https://www.theses.fr/>`_
+* `richarddelome/theses_fr *Some stats about all French PhD dissertations since 1985* <https://github.com/richarddelome/theses_fr>`_
 
 

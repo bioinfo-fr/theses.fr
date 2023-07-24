@@ -1,0 +1,28 @@
+project:
+  type: book
+
+book:
+  title: Analysis of French theses since 1985
+  author: Bioinfo-fr
+  date: 2023-07-23
+  chapters:
+    - index.qmd
+    - intro.qmd
+    - analyses.qmd
+    - summary.qmd
+    - references.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: cosmo
+    mainfont: Comfortaa
+  pdf:
+    documentclass: scrreprt
+    pdf-engine: lualatex
+    mainfont: Comfortaa
+
+
+execute: 
+  freeze: auto
