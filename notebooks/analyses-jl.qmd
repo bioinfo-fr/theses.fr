@@ -1,0 +1,40 @@
+---
+title: Analysis of French PhD theses in Julia
+author: Samuel Ortion
+date: 2023-07-29
+---
+
+## Load packages
+
+```{julia}
+using CSV
+using DataFrames
+using Dates
+using Plots
+using StatsPlots
+```
+
+
+
+## English prevalence in French PhD theses since 1985
+
+```{julia}
+df = CSV.read("../tmp/english_prevalence.csv", DataFrame)
+```
+
+```{julia}
+# Get the english / (french + english) ratio on a new column
+df.ratio = df.english ./ (df.french + df.english)
+```
+
+Plot:
+```{julia}
+# | fig-cap: Rate of French PhD theses in English since 1985
+
+plot(df.year, df.ratio, label="ratio", legend=:topleft, xlabel="Year", ylabel="English", title="English in French PhD theses since 1985", ylim=(0, 1))
+```
+
+Save:
+```{julia}
+savefig("../media/plots/english_prevalence.png")
+```

@@ -7,9 +7,10 @@ book:
   date: 2023-07-23
   chapters:
     - index.qmd
-    - intro.qmd
+    # - intro.qmd
     - analyses.qmd
-    - summary.qmd
+    - analyses-jl.qmd
+    # - summary.qmd
     - references.qmd
 
 bibliography: references.bib
