@@ -1,0 +1,14 @@
+name: theses-bioinfo-fr
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - pandas
+  - numpy
+  - matplotlib
+  - seaborn
+  - tqdm
+  - ipykernel
+  - nbformat
+  - nbclient
