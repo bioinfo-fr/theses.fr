@@ -39,5 +39,5 @@ for row in CSV.File(input_csv)
 end
 
 # Write the distribution to a CSV file
-output_csv = "tmp/english_prevalence.csv"
-CSV.write(output_csv, DataFrame(year=start_year:end_year, english=counter_english, french=counter_french, missing=counter_missing))
+# output_csv = "tmp/english_prevalence.csv"
+# CSV.write(output_csv, DataFrame(year=start_year:end_year, english=counter_english, french=counter_french, missing=counter_missing))
